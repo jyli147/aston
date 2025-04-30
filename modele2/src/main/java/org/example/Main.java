@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.Date;
 
 public class Main {
 
@@ -10,9 +9,10 @@ public class Main {
 
         // Создаем пользователя
 
-        User newUser = new User("Анна", "anna@mail.com", 123);
+        User newUser1 = new User("Юлия", "jl@mail.com", 16);
 
-        userDAO.createUser(newUser);
+        userDAO.createUser(newUser1);
+
 
         // Получаем всех пользователей
 
@@ -22,19 +22,19 @@ public class Main {
 
         // Обновляем пользователя
 
-        newUser.setName("Анна Смирнова");
+        newUser1.setName("Анна Смирнова");
 
-        userDAO.updateUser(newUser);
+        userDAO.updateUser(newUser1);
 
         // Получаем пользователя по ID
 
-        User retrievedUser = userDAO.getUserById(newUser.getId());
+        User retrievedUser = userDAO.getUserById(newUser1.getId());
 
         System.out.println("Найден пользователь: " + retrievedUser);
 
         // Удаляем пользователя
 
-        userDAO.deleteUser(newUser.getId());
+        userDAO.deleteUser(newUser1.getId());
 
         HibernateUtil.shutdown();
 

@@ -32,9 +32,7 @@ public class UserDAO {
     public List<User> getAllUsers() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("from User", User.class).list();
-
         }
-
     }
 
     public void updateUser(User user) {

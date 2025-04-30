@@ -30,7 +30,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="8dd79721-7fb2-40b4-9f29-8c306360152e">
-      <console name="postgres" type="STANDARD" schema="postgres" session="Main" />
+      <console name="postgres" type="STANDARD" schema="information_schema" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">

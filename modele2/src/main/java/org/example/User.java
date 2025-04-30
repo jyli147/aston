@@ -1,9 +1,11 @@
 package org.example;
+
 import jakarta.persistence.*;
+
 import java.util.Date;
 
 @Entity
-@Table(name = "users")
+@Table(name = "postgres")
 public class User {
 
     @Id
@@ -23,6 +25,11 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
+    // Конструктор без аргументов
+    public User() {
+    }
+
+    // Параметризованный конструктор
     public User(String name, String email, Integer age) {
         this.name = name;
         this.email = email;
@@ -68,6 +75,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{id=" + id + ", name='" + name + "', email='" + email + "', age='" + age + "', createdAt='" + createdAt + "'}";
+        return "User {id=" + id + ", name='" + name + "', email='" + email + "', age='" + age + "', createdAt='" + createdAt + "'}";
     }
 }
