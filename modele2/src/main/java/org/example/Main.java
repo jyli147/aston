@@ -9,7 +9,7 @@ public class Main {
 
         // Создаем пользователя
 
-        User newUser1 = new User("Юлия", "jl@mail.com", 16);
+        User newUser1 = new User("Юлия", "jррррl@mail.com", 17);
 
         userDAO.createUser(newUser1);
 
