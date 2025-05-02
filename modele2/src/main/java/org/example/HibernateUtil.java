@@ -20,6 +20,9 @@ public class HibernateUtil {
     }
 
     public static void shutdown() {
-        getSessionFactory().close();
+
+    }
+
+    public static void setDatabase(String jdbcUrl, String username, String password) {
     }
 }

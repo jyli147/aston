@@ -1,43 +1,32 @@
 package org.example;
 
+import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) {
-
         UserDAO userDAO = new UserDAO();
+        UserService userService = new UserService(userDAO);
 
-        // Создаем пользователя
+        // Создание пользователей
+        userService.createUser("Миша", "mitr@example.com", 30);
+        userService.createUser("Маша", "mopt@example.com", 25);
 
-        User newUser1 = new User("Юлия", "jррррl@mail.com", 17);
+        // Получение всех пользователей
+        List<User> users = userService.getAllUsers();
+        users.forEach(System.out::println);
 
-        userDAO.createUser(newUser1);
+        // Обновление пользователя
+        userService.updateUser(1L, "Иван Петров", "p.petrov@example.com", 31);
 
+        // Получение всех пользователей
+        List<User> users1 = userService.getAllUsers();
+        users1.forEach(System.out::println);
 
-        // Получаем всех пользователей
+        // Удаление пользователя
+        userService.deleteUser(4L);
 
-        System.out.println("Список пользователей:");
-
-        userDAO.getAllUsers().forEach(System.out::println);
-
-        // Обновляем пользователя
-
-        newUser1.setName("Анна Смирнова");
-
-        userDAO.updateUser(newUser1);
-
-        // Получаем пользователя по ID
-
-        User retrievedUser = userDAO.getUserById(newUser1.getId());
-
-        System.out.println("Найден пользователь: " + retrievedUser);
-
-        // Удаляем пользователя
-
-        userDAO.deleteUser(newUser1.getId());
-
-        HibernateUtil.shutdown();
-
+        // Получение всех пользователей
+        List<User> users2 = userService.getAllUsers();
+        users2.forEach(System.out::println);
     }
-
 }
